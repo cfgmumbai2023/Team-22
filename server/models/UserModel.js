@@ -32,6 +32,17 @@ const userSchema = new mongoose.Schema({
     school_id: {
         type: Object,
         default: null
+    },
+    level: {
+        type: Number,
+        default: 0,
+        minimum: 1,
+        maximum: 3
+    },
+    division: {
+        type: Number,
+        minimum: 1,
+        maximum: 5
     }
 }, { timestamps: true })
 
