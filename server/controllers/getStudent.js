@@ -1,7 +1,7 @@
-import Student from "../models/Student";
+import Student from "../models/Student.js";
 const getStudent = async (req, res) => {
   try {
-    const students = await Student.find({ teacherid: req.body.id });
+    const students = await Student.find({ teacherId: req.body.id });
     res.json(students);
   } catch (error) {
     res.status(500).json({ message: "Server error" });
