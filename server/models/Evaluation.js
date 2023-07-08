@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const objective = mongoose.Schema({
-  studentId: { type: mongoose.Schema.Types.ObjectId, required: true },
+  studentId: { type: String, required: true },
   fraction: { type: Number, required: true, minimum: 0, maximum: 10 },
   addition: { type: Number, required: true, minimum: 0, maximum: 10 },
   subtraction: { type: Number, required: true, minimum: 0, maximum: 10 },

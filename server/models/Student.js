@@ -1,16 +1,14 @@
-const mongoose = require("mongoose");
+import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
-var Schemas = mongoose.Schema,
-  ObjectId = Schemas.ObjectId;
 const student = new Schema({
   name: String, // String is shorthand for {type: String}
   address: {
     type: String,
     default: true,
   },
-  schoolid: { type: mongoose.Schema.Types.ObjectId, required: true },
-  teacherid: { type: mongoose.Schema.Types.ObjectId, required: true },
+  schoolid: { type: String, required: true },
+  teacherid: { type: String, required: true },
   disability: { type: String, required: true },
   age: {type:Number,required:true},
   level:{type:Number,required:true},
@@ -21,6 +19,6 @@ const student = new Schema({
 {timestamps:true}
 );
 
-const Student = mongoose.model("Student", student);
 
-module.exports = Student;
+
+export default mongoose.model("Student", student);

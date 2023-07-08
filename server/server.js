@@ -3,8 +3,8 @@ import colors from "colors";
 import dotenv from "dotenv";
 import morgan from "morgan";
 import connectDb from './middlewares/Connection.js';
-// import authRoutes from './routes/AuthRoute.js'
-
+import authRoutes from './routes/AuthRoutes.js'
+import teacherRoutes from './routes/teacher.js'
 dotenv.config();
 const app = express();
 
@@ -12,7 +12,9 @@ const app = express();
 app.use(express.json());
 app.use(morgan('dev'));
 
-// app.use("/api/v1/auth", authRoutes)
+app.use("/api/v1/auth", authRoutes)
+
+app.use("/api/teacher", teacherRoutes);
 
 app.get("/", (req, res) => {
     res.send("<h1>Welcome to Ecomm Mernn</h1>")
