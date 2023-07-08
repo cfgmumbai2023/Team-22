@@ -11,6 +11,7 @@ const student = new Schema({
   },
   schoolid: { type: mongoose.Schema.Types.ObjectId, required: true },
   teacherid: { type: mongoose.Schema.Types.ObjectId, required: true },
+  disability: { type: String, required: true },
 });
 
 const Student = mongoose.model("Student", student);
