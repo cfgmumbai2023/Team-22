@@ -12,7 +12,14 @@ const student = new Schema({
   schoolid: { type: mongoose.Schema.Types.ObjectId, required: true },
   teacherid: { type: mongoose.Schema.Types.ObjectId, required: true },
   disability: { type: String, required: true },
-});
+  age: {type:Number,required:true},
+  level:{type:Number,required:true},
+  gender:{type:String,required:true},
+  aadharNo:{type:Number,required:true},
+
+},
+{timestamps:true}
+);
 
 const Student = mongoose.model("Student", student);
 
