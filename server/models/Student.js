@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const student = new Schema({
@@ -10,8 +10,15 @@ const student = new Schema({
   schoolid: { type: String, required: true },
   teacherid: { type: String, required: true },
   disability: { type: String, required: true },
-});
+  age: {type:Number,required:true},
+  level:{type:Number,required:true},
+  gender:{type:String,required:true},
+  aadharNo:{type:Number,required:true},
 
-const Student = mongoose.model("Student", student);
+},
+{timestamps:true}
+);
 
-module.exports = Student;
+
+
+export default mongoose.model("Student", student);
