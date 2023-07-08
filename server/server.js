@@ -5,6 +5,7 @@ import morgan from "morgan";
 import connectDb from './middlewares/Connection.js';
 import authRoutes from './routes/AuthRoutes.js'
 import teacherRoutes from './routes/teacher.js'
+import AllStudentsRoute from './routes/Allstudents.js'
 dotenv.config();
 const app = express();
 
@@ -15,6 +16,8 @@ app.use(morgan('dev'));
 app.use("/api/v1/auth", authRoutes)
 
 app.use("/api/teacher", teacherRoutes);
+
+app.use("/api/students", AllStudentsRoute)
 
 app.get("/", (req, res) => {
     res.send("<h1>Welcome to Ecomm Mernn</h1>")
