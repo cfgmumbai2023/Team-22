@@ -7,8 +7,8 @@ const student = new Schema({
     type: String,
     default: true,
   },
-  schoolid: { type: mongoose.Schema.Types.ObjectId, required: true },
-  teacherid: { type: mongoose.Schema.Types.ObjectId, required: true },
+  schoolid: { type: String, required: true },
+  teacherid: { type: String, required: true },
   disability: { type: String, required: true },
 });
 
