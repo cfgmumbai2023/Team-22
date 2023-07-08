@@ -28,6 +28,10 @@ const userSchema = new mongoose.Schema({
     role: {
         type: Number,
         default: 0
+    },
+    school_id: {
+        type: Object,
+        default: null
     }
 }, { timestamps: true })
 
