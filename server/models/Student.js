@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-var Schemas = mongoose.Schema,
-  ObjectId = Schemas.ObjectId;
 const student = new Schema({
   name: String, // String is shorthand for {type: String}
   address: {
