@@ -1,6 +1,8 @@
 import './App.css';
 import CardArea from './Card-Area';
 import CardPie from './Card-Pie'
+import CardBar from './Card-Bar'
+
 // import ApexChart from './Chart'
 
 
@@ -14,6 +16,9 @@ function App() {
         </div>
         <div className='chartStyle'>
           <CardPie/>
+        </div>
+        <div className='chartStyle'>
+          <CardBar/>
         </div>
         
         
