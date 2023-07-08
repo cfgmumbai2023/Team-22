@@ -1,5 +1,4 @@
 import Student from "../models/Student";
-
 const getStudent = async (req, res) => {
   try {
     const students = await Student.find({ teacherid: req.body.id });
@@ -8,3 +7,5 @@ const getStudent = async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 };
+
+export default getStudent;
