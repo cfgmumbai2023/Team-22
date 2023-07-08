@@ -1,7 +1,6 @@
 import './App.css';
-import Card from './Card.js';
-import PieChart from './PieChart';
-
+import CardArea from './Card-Area';
+import CardPie from './Card-Pie'
 // import ApexChart from './Chart'
 
 
@@ -11,10 +10,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className='chartStyle'>
-           <Card/>
+           <CardArea/>
         </div>
-        <div>
-          <PieChart/>
+        <div className='chartStyle'>
+          <CardPie/>
         </div>
         
         
