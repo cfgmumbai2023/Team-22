@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const student = new Schema({
@@ -12,6 +12,6 @@ const student = new Schema({
   disability: { type: String, required: true },
 });
 
-const Student = mongoose.model("Student", student);
 
-module.exports = Student;
+
+export default mongoose.model("Student", student);
