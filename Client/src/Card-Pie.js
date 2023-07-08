@@ -2,18 +2,18 @@ import React from "react";
 import './Card.css';
 // import Carousel from "react-elastic-carousel";
 // import Carousal from "@itseasy21/react-elastic-carousel";
-import Chart from './Chart'
+import PieChart from './PieChart'
 
 
 
 
-const Card = (props)=>
+const CardPie = (props)=>
 {
     return(
         <div className="card-container">
             <div className="chart-container">
                 {/* <img src = {props.imageUrl} alt='Random Image'></img> */}
-                <Chart/>
+                <PieChart/>
             </div>
              <div className="card-contents">
                {/* <div className="card-title">
@@ -40,4 +40,4 @@ const Card = (props)=>
 
 }
 
-export default Card;
+export default CardPie;

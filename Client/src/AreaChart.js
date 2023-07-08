@@ -2,7 +2,7 @@ import React from "react";
 
 import Chart from "react-apexcharts";
 
-const ApexChart = () => {
+const AreaChart = () => {
   const options = {
   //   chart: {
   //   zoom: {
@@ -37,4 +37,4 @@ const ApexChart = () => {
 
   return <Chart options={options} series={series} type="area" width={600} height={420} />;
 };
-export default ApexChart;
+export default AreaChart;
