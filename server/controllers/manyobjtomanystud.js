@@ -1,28 +1,29 @@
 import Evaluation from "../models/Evaluation.js";
-
-const Pidata = async (req, res) => {
+const Pimanydata = async (req, res) => {
   try {
-    const allmarks = await Evaluation.find({});
-    const n = Object.keys(allmarks[0]).length - 1;
-    const marks = Array(n).fill(0);
-    let count = 0;
-    for (instance of allmarks) {
-      count++;
-      let i = 0;
-      for (e in instance) {
-        if (e != "studentId") {
-          marks[i] += instance[e];
-          i++;
+    const allmarks = await Evaluation.find();
+    let array = Object.keys(allmarks[0].toJSON());
+    let sendarray = Array(array.length - 2).fill(0);
+    for (let i = 0; i < allmarks.length; i++) {
+      const temp = allmarks[i].toJSON();
+      let idx = 0;
+      for (let j = 0; j < array.length; j++) {
+        if (array[j] != "_id" && array[j] != "studentId") {
+          console.log(temp[array[j]], array[j]);
+          sendarray[idx] += temp[array[j]];
+          idx++;
         }
       }
     }
-    for (let i = 0; i < marks.length; i++) {
-      marks[i] = marks[i] / count;
+    let div = allmarks.length;
+    for (let i = 0; i < sendarray.length; i++) {
+      if (div == 0) continue;
+      sendarray[i] = Math.ceil(sendarray[i] / div);
     }
-    res.send(mark);
+    res.send(sendarray);
   } catch (error) {
     res.status(500).json({ message: "Server error" });
   }
 };
 
-export default Pidata;
+export default Pimanydata;

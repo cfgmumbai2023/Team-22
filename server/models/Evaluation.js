@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const objective = mongoose.Schema({
   studentId: { type: String, required: true },
@@ -39,4 +39,4 @@ const objective = mongoose.Schema({
     maximum: 10,
   },
 });
-module.exports = mongoose.model("Evaluation", Evaluation);
+export default mongoose.model("Evaluation", objective);
